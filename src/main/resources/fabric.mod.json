@@ -22,6 +22,9 @@
       "net.fabricmc.example.ExampleMod"
     ]
   },
+  "mixins": [
+    "modid.mixins.json"
+  ],
 
   "requires": {
     "fabricloader": ">=0.4.0",
