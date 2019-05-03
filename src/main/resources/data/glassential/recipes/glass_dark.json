@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"#X#",
+		"###"
+	],
+	"key": {
+		"#": { "item": "minecraft:glass" },
+		"X": [ 
+			{ "item": "minecraft:coal" },
+			{ "item": "minecraft:charcoal" }
+		]
+	},
+	"result": { "item": "glassential:glass_dark", "count": 8 }
+}

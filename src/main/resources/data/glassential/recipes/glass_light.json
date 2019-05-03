@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"#X#",
+		"###"
+	],
+	"key": {
+		"#": { "item": "minecraft:glass" },
+		"X": { "item": "minecraft:glowstone_dust" }
+	},
+	"result": { "item": "glassential:glass_light", "count": 8 }
+}
