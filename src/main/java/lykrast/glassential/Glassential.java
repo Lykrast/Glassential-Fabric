@@ -55,7 +55,7 @@ public class Glassential implements ModInitializer {
 		
 		ghostly = register("glass_ghostly", new GlassBlock(FabricBlockSettings.copy(Blocks.GLASS).collidable(false).build()), ItemGroup.BUILDING_BLOCKS);
 		
-		ethereal = register("glass_ethereal", new GlassBlock(glass), ItemGroup.BUILDING_BLOCKS);
-		etherealReverse = register("glass_ethereal_reverse", new GlassBlock(glass), ItemGroup.BUILDING_BLOCKS);
+		//ethereal = register("glass_ethereal", new GlassBlock(glass), ItemGroup.BUILDING_BLOCKS);
+		//etherealReverse = register("glass_ethereal_reverse", new GlassBlock(glass), ItemGroup.BUILDING_BLOCKS);
 	}
 }
