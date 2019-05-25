@@ -8,9 +8,13 @@
   "authors": [
     "Lykrast"
   ],
+  "contributors": [
+    "Shnupbups"
+  ],
   "contact": {
-    "homepage": "https://github.com/Lykrast/Glassential-Fabric",
-    "sources": "https://github.com/Lykrast/Glassential-Fabric"
+    "homepage": "https://minecraft.curseforge.com/projects/glassential-fabric",
+    "sources": "https://github.com/Lykrast/Glassential-Fabric",
+    "issues": "https://github.com/Lykrast/Glassential-Fabric/issues"
   },
 
   "license": "MIT",

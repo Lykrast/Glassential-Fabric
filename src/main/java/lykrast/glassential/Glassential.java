@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.GlassBlock;
+import net.minecraft.entity.EntityContext;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -13,11 +14,13 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
 public class Glassential implements ModInitializer {
 	public static final String MODID = "glassential";
-	public Block light, redstone, dark, ghostly, ethereal, etherealReverse;
+	public Block light, redstone, dark, ghostly, ethereal, etherealReverse, etherealDark;
 	
 	@Override
 	public void onInitialize() {
@@ -55,7 +58,36 @@ public class Glassential implements ModInitializer {
 		
 		ghostly = register("glass_ghostly", new GlassBlock(FabricBlockSettings.copy(Blocks.GLASS).collidable(false).build()), ItemGroup.BUILDING_BLOCKS);
 		
-		//ethereal = register("glass_ethereal", new GlassBlock(glass), ItemGroup.BUILDING_BLOCKS);
-		//etherealReverse = register("glass_ethereal_reverse", new GlassBlock(glass), ItemGroup.BUILDING_BLOCKS);
+		ethereal = register("glass_ethereal", new GlassBlock(glass) {
+			@Override
+			public VoxelShape getCollisionShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, EntityContext entityContext_1) {
+				if(entityContext_1.isSneaking()) {
+					return VoxelShapes.cuboid(0,0,0,0,0,0);
+				} else return super.getCollisionShape(blockState_1, blockView_1, blockPos_1, entityContext_1);
+			}
+		}, ItemGroup.BUILDING_BLOCKS);
+
+		etherealReverse = register("glass_ethereal_reverse", new GlassBlock(glass) {
+			@Override
+			public VoxelShape getCollisionShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, EntityContext entityContext_1) {
+				if(!entityContext_1.isSneaking()) {
+					return VoxelShapes.cuboid(0,0,0,0,0,0);
+				} else return super.getCollisionShape(blockState_1, blockView_1, blockPos_1, entityContext_1);
+			}
+		}, ItemGroup.BUILDING_BLOCKS);
+
+		etherealDark = register("glass_ethereal_dark", new GlassBlock(glass) {
+			@Override
+			public VoxelShape getCollisionShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, EntityContext entityContext_1) {
+				if(entityContext_1.isSneaking()) {
+					return VoxelShapes.cuboid(0,0,0,0,0,0);
+				} else return super.getCollisionShape(blockState_1, blockView_1, blockPos_1, entityContext_1);
+			}
+
+			@Override
+			public int getLightSubtracted(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1) {
+				return blockView_1.getMaxLightLevel();
+			}
+		}, ItemGroup.BUILDING_BLOCKS);
 	}
 }
