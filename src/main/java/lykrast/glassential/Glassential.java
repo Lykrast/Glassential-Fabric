@@ -26,7 +26,7 @@ public class Glassential implements ModInitializer {
 	
 	private Block register(String name, Block block, ItemGroup creativeTab) {
 		block = Registry.register(Registry.BLOCK, new Identifier(MODID, name), block);
-		Registry.register(Registry.ITEM, new Identifier(MODID, name), new BlockItem(block, new Item.Settings().itemGroup(creativeTab)));
+		Registry.register(Registry.ITEM, new Identifier(MODID, name), new BlockItem(block, new Item.Settings().group(creativeTab)));
 		return block;
 	}
 	
