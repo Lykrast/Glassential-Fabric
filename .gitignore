@@ -23,3 +23,11 @@ bin/
 # fabric
 
 run/
+
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
