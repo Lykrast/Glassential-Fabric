@@ -18,10 +18,10 @@ import net.minecraft.world.BlockView;
 public class Glassential implements ModInitializer {
 	public static final String MODID = "glassential";
 
-	public static Block GLASS_LIGHT;
-	public static Block GLASS_REDSTONE;
-	public static Block GLASS_DARK;
-	public static Block GLASS_GHOSTLY;
+    public static Block GLASS_DARK;
+    public static Block GLASS_GHOSTLY;
+    public static Block GLASS_LIGHT;
+    public static Block GLASS_REDSTONE;
 	public static Block GLASS_ETHEREAL;
 	public static Block GLASS_ETHEREAL_REVERSE;
 

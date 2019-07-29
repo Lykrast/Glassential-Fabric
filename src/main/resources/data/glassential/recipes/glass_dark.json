@@ -7,10 +7,7 @@
 	],
 	"key": {
 		"#": { "item": "minecraft:glass" },
-		"X": [ 
-			{ "item": "minecraft:coal" },
-			{ "item": "minecraft:charcoal" }
-		]
+		"X": { "tag": "minecraft:coals" }
 	},
 	"result": { "item": "glassential:glass_dark", "count": 8 }
 }
