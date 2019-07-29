@@ -17,24 +17,30 @@ import net.minecraft.world.BlockView;
 
 public class Glassential implements ModInitializer {
 	public static final String MODID = "glassential";
-	public Block light, redstone, dark, ghostly, ethereal, etherealReverse;
-	
+
+	public static Block GLASS_LIGHT;
+	public static Block GLASS_REDSTONE;
+	public static Block GLASS_DARK;
+	public static Block GLASS_GHOSTLY;
+	public static Block GLASS_ETHEREAL;
+	public static Block GLASS_ETHEREAL_REVERSE;
+
 	@Override
 	public void onInitialize() {
 		registerBlocks();
 	}
 	
-	private Block register(String name, Block block, ItemGroup creativeTab) {
-		block = Registry.register(Registry.BLOCK, new Identifier(MODID, name), block);
-		Registry.register(Registry.ITEM, new Identifier(MODID, name), new BlockItem(block, new Item.Settings().group(creativeTab)));
+	private static Block registerBlock(String name, Block block, ItemGroup creativeTab) {
+	    Identifier blockName = new Identifier(MODID, name);
+		block = Registry.register(Registry.BLOCK, blockName, block);
+		Registry.register(Registry.ITEM, blockName, new BlockItem(block, new Item.Settings().group(creativeTab)));
 		return block;
 	}
 	
-	private void registerBlocks() {
-		Block.Settings glass = FabricBlockSettings.copy(Blocks.GLASS).build();
-		light = register("glass_light", new GlassBlock(FabricBlockSettings.copy(Blocks.GLASS).lightLevel(15).build()), ItemGroup.BUILDING_BLOCKS);
-		
-		redstone = register("glass_redstone", new GlassBlock(glass) {
+	private static void registerBlocks() {
+        GLASS_LIGHT = registerBlock("glass_light", new GlassBlock(FabricBlockSettings.copy(Blocks.GLASS).lightLevel(15).build()), ItemGroup.BUILDING_BLOCKS);
+
+        GLASS_REDSTONE = registerBlock("glass_redstone", new GlassBlock(Block.Settings.copy(Blocks.GLASS)) {
 			@Override
 			public boolean emitsRedstonePower(BlockState blockState_1) {
 				return true;
@@ -45,17 +51,17 @@ public class Glassential implements ModInitializer {
 				return 15;
 			}
 		}, ItemGroup.REDSTONE);
-		
-		dark = register("glass_dark", new GlassBlock(glass) {
+
+        GLASS_DARK = registerBlock("glass_dark", new GlassBlock(Block.Settings.copy(Blocks.GLASS)) {
 			@Override
 			public int getLightSubtracted(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1) {
 				return blockView_1.getMaxLightLevel();
 			}
 		}, ItemGroup.BUILDING_BLOCKS);
+
+        GLASS_GHOSTLY = registerBlock("glass_ghostly", new GlassBlock(FabricBlockSettings.copy(Blocks.GLASS).collidable(false).build()), ItemGroup.BUILDING_BLOCKS);
 		
-		ghostly = register("glass_ghostly", new GlassBlock(FabricBlockSettings.copy(Blocks.GLASS).collidable(false).build()), ItemGroup.BUILDING_BLOCKS);
-		
-		//ethereal = register("glass_ethereal", new GlassBlock(glass), ItemGroup.BUILDING_BLOCKS);
-		//etherealReverse = register("glass_ethereal_reverse", new GlassBlock(glass), ItemGroup.BUILDING_BLOCKS);
+		//GLASS_ETHEREAL = register("glass_ethereal", new GlassBlock(Block.Settings.copy(Blocks.GLASS)), ItemGroup.BUILDING_BLOCKS);
+		//GLASS_ETHEREAL_REVERSE = register("glass_ethereal_reverse", new GlassBlock(Block.Settings.copy(Blocks.GLASS)), ItemGroup.BUILDING_BLOCKS);
 	}
 }
