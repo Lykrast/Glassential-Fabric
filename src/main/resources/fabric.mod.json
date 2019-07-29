@@ -9,25 +9,22 @@
     "Lykrast"
   ],
   "contact": {
-    "homepage": "https://github.com/Lykrast/Glassential-Fabric",
-    "sources": "https://github.com/Lykrast/Glassential-Fabric"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/glassential-fabric",
+    "sources": "https://github.com/Lykrast/Glassential-Fabric",
+    "issues": "https://github.com/Lykrast/Glassential-Fabric/issues"
   },
 
   "license": "MIT",
   "icon": "assets/glassential/icon.png",
 
-  "environment": "*",
   "entrypoints": {
     "main": [
       "lykrast.glassential.Glassential"
     ]
   },
 
-  "requires": {
+  "depends": {
     "fabricloader": ">=0.4.0",
-    "fabric": "*"
-  },
-  "suggests": {
-    "flamingo": "*"
+    "fabric": ">=0.3.0+build.200"
   }
 }
