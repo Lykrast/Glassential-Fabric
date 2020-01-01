@@ -20,6 +20,6 @@ public class EtherealGlassBlock extends GlassBlock {
     @Deprecated
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, EntityContext context) {
-        return context.isSneaking() == this.collideOnSneaking ? state.getOutlineShape(world, pos) : VoxelShapes.empty();
+        return context.isDescending() == this.collideOnSneaking ? state.getOutlineShape(world, pos) : VoxelShapes.empty();
     }
 }
