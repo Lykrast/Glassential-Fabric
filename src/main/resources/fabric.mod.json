@@ -21,6 +21,9 @@
   "entrypoints": {
     "main": [
       "lykrast.glassential.Glassential"
+    ],
+    "client": [
+      "lykrast.glassential.GlassentialClient"
     ]
   },
 

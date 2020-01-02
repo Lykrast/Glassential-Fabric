@@ -9,9 +9,9 @@ public class DarkEtherealGlassBlock extends EtherealGlassBlock {
     public DarkEtherealGlassBlock(Settings settings, boolean collideOnSneaking) {
         super(settings, collideOnSneaking);
     }
-
+    
     @Override
-    public int getLightSubtracted(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1) {
-        return blockView_1.getMaxLightLevel();
+    public int getOpacity(BlockState state, BlockView view, BlockPos pos) {
+        return view.getMaxLightLevel();
     }
 }
