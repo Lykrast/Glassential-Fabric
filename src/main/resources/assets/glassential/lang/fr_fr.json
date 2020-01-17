@@ -7,6 +7,13 @@
     "block.glassential.glass_ghostly": "Verre fantomatique",
     "block.glassential.glass_light": "Verre lumineux",
     "block.glassential.glass_redstone": "Verre de redstone",
+
+    "tooltip.glassential.property_dark": "Opaque à la lumière",
+    "tooltip.glassential.property_ethereal": "Permet de passer lorsque accroupi",
+    "tooltip.glassential.property_ghostly": "Permet aux entités de passer",
+    "tooltip.glassential.property_luminous": "Émet de la lumière",
+    "tooltip.glassential.property_redstone": "Émet un signal de redstone",
+    "tooltip.glassential.property_reverse_ethereal": "Solide lorsque accroupi",
 	
     "itemGroup.glassential.items": "Glassential"
 }
