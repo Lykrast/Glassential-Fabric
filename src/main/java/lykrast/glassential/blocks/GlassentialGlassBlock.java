@@ -3,7 +3,7 @@ package lykrast.glassential.blocks;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
-import net.minecraft.block.Block;
+import net.minecraft.block.AbstractGlassBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.item.TooltipContext;
@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 
-public class GlassentialGlassBlock extends Block {
+public class GlassentialGlassBlock extends AbstractGlassBlock {
 
     private final BlockProperties[] properties;
     private final boolean dark;
