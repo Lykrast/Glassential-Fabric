@@ -5,6 +5,7 @@ import net.fabricmc.fabric.impl.blockrenderlayer.BlockRenderLayerMapImpl;
 
 import net.minecraft.client.render.RenderLayer;
 
+@SuppressWarnings("unused")
 public class GlassentialClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
