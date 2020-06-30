@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "glassential",
   "version": "${version}",
-
   "name": "Glassential",
   "description": "Various glasses for all your decorative needs.",
   "authors": [
@@ -14,10 +13,8 @@
     "sources": "https://github.com/Lykrast/Glassential-Fabric",
     "issues": "https://github.com/Lykrast/Glassential-Fabric/issues"
   },
-
   "license": "MIT",
   "icon": "assets/glassential/icon.png",
-
   "entrypoints": {
     "main": [
       "lykrast.glassential.Glassential"
@@ -26,9 +23,8 @@
       "lykrast.glassential.GlassentialClient"
     ]
   },
-
   "depends": {
-    "fabricloader": ">=0.4.0",
-    "fabric": ">=0.3.0+build.200"
+    "fabricloader": ">=0.7-",
+    "fabric": ">=0.3-"
   }
 }

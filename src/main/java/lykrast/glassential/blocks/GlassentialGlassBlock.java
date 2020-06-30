@@ -6,8 +6,8 @@ import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.AbstractGlassBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.EntityContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -51,7 +51,7 @@ public class GlassentialGlassBlock extends AbstractGlassBlock {
 
     @Deprecated
     @Override
-    public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, EntityContext context) {
+    public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         if(this.ethereal || this.reverseEthereal) {
             return context.isDescending() == this.reverseEthereal ? state.getOutlineShape(view, pos) : VoxelShapes.empty();
         }
