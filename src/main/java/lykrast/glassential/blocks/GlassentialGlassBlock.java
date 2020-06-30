@@ -8,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -40,7 +41,15 @@ public class GlassentialGlassBlock extends AbstractGlassBlock {
         this.dark = props.contains(BlockProperties.DARK);
         this.ethereal = props.contains(BlockProperties.ETHEREAL);
         this.redstone = props.contains(BlockProperties.REDSTONE);
-        this.reverseEthereal = props.contains(BlockProperties.REVERSE_ETHEREAL);
+        this.reverseEthereal = !this.ethereal && props.contains(BlockProperties.REVERSE_ETHEREAL);
+    }
+
+    @Override
+    public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
+        if (this.reverseEthereal && type != NavigationType.WATER) {
+            return true;
+        }
+        return super.canPathfindThrough(state, world, pos, type);
     }
 
     @Deprecated
@@ -52,8 +61,9 @@ public class GlassentialGlassBlock extends AbstractGlassBlock {
     @Deprecated
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        if(this.ethereal || this.reverseEthereal) {
-            return context.isDescending() == this.reverseEthereal ? state.getOutlineShape(view, pos) : VoxelShapes.empty();
+        if (this.ethereal || this.reverseEthereal) {
+            //need that absent check to trick some cached values, else ethereal glass pushes entities out
+            return context != ShapeContext.absent() && context.isDescending() == this.reverseEthereal ? state.getOutlineShape(view, pos, context) : VoxelShapes.empty();
         }
         return super.getCollisionShape(state, view, pos, context);
     }
@@ -61,14 +71,14 @@ public class GlassentialGlassBlock extends AbstractGlassBlock {
     @Environment(EnvType.CLIENT)
     @Override
     public void buildTooltip(ItemStack stack, BlockView view, List<Text> tooltip, TooltipContext options) {
-        for(BlockProperties property : properties) {
+        for (BlockProperties property : properties) {
             tooltip.add(new TranslatableText(property.getTranslationKey()).formatted(property.getFormatting()));
         }
     }
 
     @Override
     public boolean emitsRedstonePower(BlockState state) {
-        return this.redstone;
+        return this.redstone || super.emitsRedstonePower(state);
     }
 
     @Override
