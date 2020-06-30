@@ -14,10 +14,15 @@ minecraft {
 }
 
 repositories {
-	maven { url = "https://maven.fabricmc.net/" }
+	jcenter()
+	maven {
+		name = "FabricMC"
+		url = "https://maven.fabricmc.net"
+	}
 }
 
 dependencies {
+	compileOnly "com.google.code.findbugs:jsr305:3.0.2" //needed to not get errors when reading MC code
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
