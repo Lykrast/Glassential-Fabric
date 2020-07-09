@@ -7,6 +7,13 @@
     "block.glassential.glass_ghostly": "幽灵玻璃",
     "block.glassential.glass_light": "发光玻璃",
     "block.glassential.glass_redstone": "红石玻璃",
-    
-    "itemGroup.glassential.items": "Glassential"
+
+    "tooltip.glassential.property_dark": "不透光",
+    "tooltip.glassential.property_ethereal": "允许潜行时通过",
+    "tooltip.glassential.property_ghostly": "允许通行实体",
+    "tooltip.glassential.property_luminous": "发出明亮的光",
+    "tooltip.glassential.property_redstone": "发出强烈的红石信号",
+    "tooltip.glassential.property_reverse_ethereal": "实体正在潜行",
+
+    "itemGroup.glassential.items": "玻璃"
 }
