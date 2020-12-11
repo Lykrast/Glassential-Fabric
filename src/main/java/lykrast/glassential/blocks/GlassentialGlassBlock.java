@@ -70,7 +70,7 @@ public class GlassentialGlassBlock extends AbstractGlassBlock {
 
     @Environment(EnvType.CLIENT)
     @Override
-    public void buildTooltip(ItemStack stack, BlockView view, List<Text> tooltip, TooltipContext options) {
+    public void appendTooltip(ItemStack stack, BlockView view, List<Text> tooltip, TooltipContext options) {
         for (BlockProperties property : properties) {
             tooltip.add(new TranslatableText(property.getTranslationKey()).formatted(property.getFormatting()));
         }

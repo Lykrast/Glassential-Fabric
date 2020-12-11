@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.4-SNAPSHOT'
+	id 'fabric-loom' version '0.5-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -10,15 +10,8 @@ archivesBaseName = project.archives_base_name
 version = "${minecraft_version}-${mod_version}"
 group = project.maven_group
 
-minecraft {
-}
-
 repositories {
 	jcenter()
-	maven {
-		name = "FabricMC"
-		url = "https://maven.fabricmc.net"
-	}
 }
 
 dependencies {
