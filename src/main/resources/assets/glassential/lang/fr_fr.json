@@ -1,19 +1,18 @@
 {
-    "block.glassential.glass_dark": "Verre sombre",
-    "block.glassential.glass_dark_ethereal": "Verre éthéré sombre",
-    "block.glassential.glass_dark_ethereal_reverse": "Verre éthéré sombre inversé",
-    "block.glassential.glass_ethereal": "Verre éthéré",
-    "block.glassential.glass_ethereal_reverse": "Verre éthéré inversé",
-    "block.glassential.glass_ghostly": "Verre fantomatique",
-    "block.glassential.glass_light": "Verre lumineux",
-    "block.glassential.glass_redstone": "Verre de redstone",
+    "block.glassential.tinted_ethereal_glass": "Verre éthéré teinté",
+    "block.glassential.tinted_reverse_ethereal_glass": "Verre éthéré teinté inversé",
+    "block.glassential.ethereal_glass": "Verre éthéré",
+    "block.glassential.reverse_ethereal_glass": "Verre éthéré inversé",
+    "block.glassential.ghostly_glass": "Verre fantomatique",
+    "block.glassential.light_glass": "Verre lumineux",
+    "block.glassential.redstone_glass": "Verre de redstone",
 
-    "tooltip.glassential.property_dark": "Opaque à la lumière",
+    "tooltip.glassential.property_tinted": "Opaque à la lumière",
     "tooltip.glassential.property_ethereal": "Permet de passer lorsque accroupi",
     "tooltip.glassential.property_ghostly": "Permet aux entités de passer",
     "tooltip.glassential.property_luminous": "Émet de la lumière",
     "tooltip.glassential.property_redstone": "Émet un signal de redstone",
     "tooltip.glassential.property_reverse_ethereal": "Solide lorsque accroupi",
-	
+
     "itemGroup.glassential.items": "Glassential"
 }

@@ -7,7 +7,7 @@ import net.minecraft.util.Util;
 import org.apache.commons.lang3.ArrayUtils;
 
 public enum BlockProperties {
-    DARK("dark", Formatting.DARK_GRAY),
+    TINTED("tinted", Formatting.DARK_GRAY),
     ETHEREAL("ethereal", Formatting.AQUA),
     GHOSTLY("ghostly", Formatting.GRAY),
     LUMINOUS("luminous", Formatting.GOLD),

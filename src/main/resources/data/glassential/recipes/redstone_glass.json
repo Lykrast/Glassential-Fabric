@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "glassential_redstone_glass",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass"
+    },
+    "X": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "result": {
+    "item": "glassential:redstone_glass",
+    "count": 8
+  }
+}

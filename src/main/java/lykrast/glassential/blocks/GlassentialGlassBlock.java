@@ -2,11 +2,8 @@ package lykrast.glassential.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.block.FabricBlockSettings;
-import net.minecraft.block.AbstractGlassBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ShapeContext;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.item.ItemStack;
@@ -20,7 +17,7 @@ import net.minecraft.world.BlockView;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 public class GlassentialGlassBlock extends AbstractGlassBlock {
 
@@ -34,11 +31,11 @@ public class GlassentialGlassBlock extends AbstractGlassBlock {
         this(settings -> settings, properties);
     }
 
-    public GlassentialGlassBlock(Function<FabricBlockSettings, FabricBlockSettings> settingsApplier, BlockProperties... properties) {
-        super(settingsApplier.apply(FabricBlockSettings.copy(Blocks.GLASS)).build());
+    public GlassentialGlassBlock(UnaryOperator<AbstractBlock.Settings> settingsApplier, BlockProperties... properties) {
+        super(settingsApplier.apply(FabricBlockSettings.copy(Blocks.GLASS)));
         this.properties = properties;
         List<BlockProperties> props = Arrays.asList(properties);
-        this.dark = props.contains(BlockProperties.DARK);
+        this.dark = props.contains(BlockProperties.TINTED);
         this.ethereal = props.contains(BlockProperties.ETHEREAL);
         this.redstone = props.contains(BlockProperties.REDSTONE);
         this.reverseEthereal = !this.ethereal && props.contains(BlockProperties.REVERSE_ETHEREAL);
@@ -46,10 +43,7 @@ public class GlassentialGlassBlock extends AbstractGlassBlock {
 
     @Override
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
-        if (this.reverseEthereal && type != NavigationType.WATER) {
-            return true;
-        }
-        return super.canPathfindThrough(state, world, pos, type);
+        return (this.reverseEthereal && type != NavigationType.WATER) || super.canPathfindThrough(state, world, pos, type);
     }
 
     @Deprecated
