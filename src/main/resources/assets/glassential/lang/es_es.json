@@ -1,0 +1,18 @@
+{
+    "block.glassential.tinted_ethereal_glass": "Cristal opaco etéreo",
+    "block.glassential.tinted_reverse_ethereal_glass": "Cristal opaco etéreo reverso",
+    "block.glassential.ethereal_glass": "Cristal etéreo",
+    "block.glassential.reverse_ethereal_glass": "Cristal etéreo reverso",
+    "block.glassential.ghostly_glass": "Cristal espectral",
+    "block.glassential.light_glass": "Cristal luminoso",
+    "block.glassential.redstone_glass": "Cristal de redstone",
+
+    "tooltip.glassential.property_tinted": "Opaco a la luz",
+    "tooltip.glassential.property_ethereal": "Permite el paso al estar agachado",
+    "tooltip.glassential.property_ghostly": "Permite el paso a las entidades",
+    "tooltip.glassential.property_luminous": "Emite una luz brillante",
+    "tooltip.glassential.property_redstone": "Emite una señal de redstone fuerte",
+    "tooltip.glassential.property_reverse_ethereal": "Es sólido al estar agachado",
+	
+    "itemGroup.glassential.items": "Glassential"
+}
