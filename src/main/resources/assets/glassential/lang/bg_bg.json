@@ -1,0 +1,18 @@
+{
+    "block.glassential.tinted_ethereal_glass": "Тонирано Ефирно Стъкло",
+    "block.glassential.tinted_reverse_ethereal_glass": "Тонирано Обратно Ефирно Стъкло",
+    "block.glassential.ethereal_glass": "Ефирно Стъкло",
+    "block.glassential.reverse_ethereal_glass": "Обратно Ефирно Стъкло",
+    "block.glassential.ghostly_glass": "Призръчно Стъкло",
+    "block.glassential.light_glass": "Светещо Стъкло",
+    "block.glassential.redstone_glass": "Червенокаменно Стъкло",
+
+    "tooltip.glassential.property_tinted": "Непрозрачен за светлина",
+    "tooltip.glassential.property_ethereal": "Позволява преминаване по време на промъкване",
+    "tooltip.glassential.property_ghostly": "Позволява преминаването на обекти",
+    "tooltip.glassential.property_luminous": "Излъчва ярка светлина",
+    "tooltip.glassential.property_redstone": "Излъчва силен сигнал от червен камък",
+    "tooltip.glassential.property_reverse_ethereal": "Твърд, по време на промъква",
+
+    "itemGroup.glassential.items": "Glassential"
+}
