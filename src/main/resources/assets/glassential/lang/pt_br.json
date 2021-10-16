@@ -1,0 +1,18 @@
+{
+    "block.glassential.tinted_ethereal_glass": "Vidro Fosco Etéreo",
+    "block.glassential.tinted_reverse_ethereal_glass": "Vidro Fosco Etéreo Reverso",
+    "block.glassential.ethereal_glass": "Vidro Etéreo",
+    "block.glassential.reverse_ethereal_glass": "Vidro Etéreo Reverso",
+    "block.glassential.ghostly_glass": "Vidro Espectral",
+    "block.glassential.light_glass": "Vidro Luminoso",
+    "block.glassential.redstone_glass": "Vidro de Redstone",
+
+    "tooltip.glassential.property_tinted": "Opaco à luz",
+    "tooltip.glassential.property_ethereal": "Permite passar enquanto agachado",
+    "tooltip.glassential.property_ghostly": "Permite passagem de entidades",
+    "tooltip.glassential.property_luminous": "Emite uma luz brilhante",
+    "tooltip.glassential.property_redstone": "Emite um sinal forte de redstone",
+    "tooltip.glassential.property_reverse_ethereal": "Sólido enquanto agachado",
+
+    "itemGroup.glassential.items": "Glassential"
+}
